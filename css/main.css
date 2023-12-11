@@ -1,0 +1,65 @@
+body {
+    padding: 0;
+    margin-bottom: 80px;
+    background: #cfbbcc!important;
+}
+.logo{
+    max-width: 55%; 
+    display: block;
+    margin: 0 auto;
+}
+
+ 
+  .search__number {
+    display: flex;
+    width: 89%;
+    position: relative;
+ 
+  }
+  
+  .search__input {
+    background: #baebf3!important;
+    border-radius: 30px!important;
+    width:70%!important;
+    font-size: 1.1rem!important;
+    padding: 12px 20px !important;
+    margin-top: 20px;
+  }
+ 
+  .search__btn {
+    background: #46c8e8!important;
+    border-radius: 30px !important;
+    padding: 13px!important;
+    color: #1f1e1e!important;
+    position: absolute !important;
+   left: 250px;
+    font-size: 1rem!important;
+    margin-top: 20px;
+  
+  }
+ 
+
+.card {
+  background-color: #d9dada!important;
+  transition: ease 0.5s;
+  width: 85%;
+  text-align: center;
+  animation-name: opacity;
+  animation-duration: 1s;
+}
+.card:hover {/* Efecto de movimiento */
+  transform: scale(1.1);
+}
+
+.card-title{
+  background-color: rgba(255, 255, 255, 0.4)!important;
+  border-radius: 20px;
+  padding: 7px;
+  color: #749ca5!important;
+
+
+}
+
+
+
+
