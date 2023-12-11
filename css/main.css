@@ -60,6 +60,14 @@ body {
 
 }
 
+.buscar{
+    width: 300px!important;
+    align-items: center!important;
 
+}
+.card.buscar:hover{
+   transform: none;
+ 
+}
 
 

@@ -1,13 +1,27 @@
-/* METODO DE  BÚSQUEDA
+
 const divBody = document.querySelector("#app");
 
 divBody.innerHTML = `
+<div class="container">
+    <div class="row justify-content-center">
+        
+           <div class="card buscar m-4">
+              <p>Busca el nombre de tu Pokémon:</p>
+             <label for="nameInput">Nombre:</label>
+             <input type="text" id="nameInput" placeholder="Ingrese un Pokémon">
+             <br>
+             <button class="btn btn-success" id="BotonBuscar">Buscar</button>
+            </div>
+  
+      </div>
+ </div>
 
 
-  <section class="container">
+<section class="container">
     <div class="row" id="characters-cards"></div>
   </section>
 `
+
 // METODO DE  BÚSQUEDA
 const botonEnviar = document.querySelector("#BotonBuscar");
 botonEnviar.addEventListener('click', buscarPokemon);
@@ -48,8 +62,8 @@ async function buscarPokemon() {
       <button id="BotonVolver">Volver</button>
     `;
   }
-} */
-/* 
+} 
+
 const getCharacters = async () => {
   try {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
@@ -85,69 +99,6 @@ const getCharacters = async () => {
 }
 
 getCharacters();
- */
-const divBody = document.querySelector("#app")
+ 
 
-divBody.innerHTML = `
-<img class="titulo" src="https://static.vecteezy.com/system/resources/previews/027/127/591/original/pokemon-logo-pokemon-icon-transparent-free-png.png" alt="imagenTitulo">
-  <div class="card">
-    <p>Busca el nombre de tu Pokémon:</p>
-    <label for="nameInput">Nombre:</label>
-    <input type="text" id="nameInput" placeholder="Ingrese un Pokémon">
-    <br>
-    <button id="BotonBuscar">Buscar</button>
-  </div>
-`
 
-const botonEnviar = document.querySelector("#BotonBuscar")
-botonEnviar.addEventListener('click', buscarPokemon);
-
-function buscarPokemon(){
-  const pokemonInput = document.querySelector('#nameInput').value;
-
-  // Hacer la solicitud a la PokeAPI
-  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonInput}`)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('No se encontraron resultados para el Pokémon ingresado.');
-    }
-
-    return response.json();
-  })
-
-  .then(data => {
-    // Manipular la respuesta para obtener detalles relevantes
-    const pokemonDetails = {
-      nombre: data.name,
-      imagen: data.sprites.front_default,
-      tipos: data.types.map(type => type.type.name).join(', ')
-    };
-
-    function capitalizarPrimeraLetra(texto) {
-      return texto.charAt(0).toUpperCase() + texto.slice(1);
-    }
-  
-    // Mostrar los detalles en el DOM
-    divBody.innerHTML = `
-      <div class="finalCard">
-      <h2>${capitalizarPrimeraLetra(pokemonDetails.nombre)}</h2>
-      <img src="${pokemonDetails.imagen}" alt="${pokemonDetails.nombre}">
-      <p><strong>Tipo:</strong> ${pokemonDetails.tipos}</p>
-      <button id="BotonVolver">Volver</button>
-      <div/>
-    `;
-    
-    const VolverButton = document.querySelector("#BotonVolver")
-    VolverButton.addEventListener('click', () => {location.reload();});
-  })
-    
-  .catch(error => {
-    divBody.innerHTML = `
-      <p>${error.message}</p>
-      <button id="BotonVolver">Volver</button>
-    `
-
-    const VolverButton = document.querySelector("#BotonVolver")
-    VolverButton.addEventListener('click', () => {location.reload();});
-  });
-}
