@@ -58,9 +58,16 @@ async function buscarPokemon() {
 
   } catch (error) {
     divBody.innerHTML = `
-      <p>${error.message}</p>
-      <button id="BotonVolver">Volver</button>
+      <div class="contError">
+        <div class="errorDiv">
+          <p>${error.message}</p>
+          <button id="BotonVolver">Volver</button>
+        <div/>
+      <div/>
     `;
+
+    const VolverButton = document.querySelector("#BotonVolver");
+    VolverButton.addEventListener('click', () => { location.reload(); });
   }
 } 
 

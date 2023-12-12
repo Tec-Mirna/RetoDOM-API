@@ -70,4 +70,35 @@ body {
  
 }
 
+/*==============Javier==============*/
 
+.errorDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 530px;
+  background-color: #d9dada!important;
+  border-radius: 6px;
+  border: 1px solid rgb(169, 169, 169);
+}
+
+.contError{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contError button{
+  all: unset;
+  background-color: #198754;
+  padding: 7px 9px;
+  border-radius: 5px;
+  color: white;
+  transition: ease-in-out 0.15s;
+}
+
+.contError button:hover{
+  background-color: #157347;;
+}
